@@ -17,7 +17,7 @@ Plug 'github/copilot.vim'
 call plug#end()
 
 
-colorscheme jellybeans
+silent! colorscheme jellybeans
 source mappings.vim
 source settings.vim
 source commands.vim
