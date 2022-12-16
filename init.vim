@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'cbochs/portal.nvim'
 Plug 'ap/vim-css-color'
 Plug 'folke/which-key.nvim'
 Plug 'github/copilot.vim'
