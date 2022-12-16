@@ -1,5 +1,8 @@
 command Conf :vs $MYVIMRC
 
+lua fzy = require('fzy')
+command -nargs=1 -complete=dir Search :lua fzy.execute('rg ' .. '<args>' .. ' --files', fzy.sinks.edit_file)
+
 " Python run pytest
 function GetTestCommand()
 	let l:file = expand('%:p')

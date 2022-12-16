@@ -1,6 +1,8 @@
 call plug#begin()
 Plug 'ap/vim-css-color'
+Plug 'folke/which-key.nvim'
 Plug 'github/copilot.vim'
+Plug 'mfussenegger/nvim-fzy'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}
