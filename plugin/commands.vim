@@ -1,3 +1,5 @@
+command Conf :vs $MYVIMRC
+
 " Python run pytest
 function GetTestCommand()
 	let l:file = expand('%:p')
