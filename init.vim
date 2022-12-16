@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'ap/vim-css-color'
 Plug 'folke/which-key.nvim'
 Plug 'github/copilot.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mfussenegger/nvim-fzy'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'

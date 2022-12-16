@@ -13,5 +13,6 @@ set shiftwidth=0
 set smarttab
 set tabstop=2 " Tabs appear as 2 spaces width
 set updatetime=300
+set background=dark
 
 filetype plugin indent on
