@@ -1,4 +1,4 @@
-command Conf :vs $MYVIMRC
+command Conf :vs ~/.config/nvim/
 
 lua fzy = require('fzy')
 command -nargs=1 -complete=dir Search :lua fzy.execute('rg ' .. '<args>' .. ' --files', fzy.sinks.edit_file)
