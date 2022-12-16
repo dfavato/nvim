@@ -1,23 +1,18 @@
-"Set the python path correctly
-let g:python3_host_prog="/home/dfavato/.pyenv/shims/python"
-
-
 call plug#begin()
-Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-commentary'    " gcc for commenting
-Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
+Plug 'github/copilot.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tc50cal/vim-terminal'
-Plug 'preservim/tagbar'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim'
+Plug 'tpope/vim-commentary'    " gcc for commenting
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 
 silent! colorscheme jellybeans
-source mappings.vim
-source settings.vim
-source commands.vim
