@@ -1,0 +1,9 @@
+{
+	"suggest.enablePreselect": true,
+	"suggest.noselect": true,
+	"diagnostic.errorSign": "x",
+	"diagnostic.warningSign": "!",
+	"diagnostic.infoSign": "i",
+	"diagnostic.hintSign": ".",
+	"python.formatting.provider": "black",
+}
