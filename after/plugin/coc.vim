@@ -1,3 +1,20 @@
+" You can add extensions names to the g:coc_global_extensions and coc will
+" install the missing extensions after coc service started
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-git',
+    \ 'coc-pyright',
+    \ 'coc-tsserver',
+    \ 'coc-html',
+    \ 'coc-explorer',
+    \ 'coc-eslint',
+    \ 'coc-yaml',
+    \ 'coc-xml',
+    \ 'coc-css',
+    \ 'coc-vimlsp',
+    \ 'coc-lua',
+    \ ]
+
 " Conqueror of completes configuration
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -41,6 +58,13 @@ command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:OR` command for organize imports of the current buffer
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Highlight
+highlight link CocErrorVirtualText ErrorMsg
+highlight link CocWarningVirtualText WarningMsg
+highlight link CocInfoVirtualText MoreMsg
+highlight link CocHintVirtualText ModeMsg
+highlight link CocInlayHintType MoreMsg
 
 
 lua<<EOF

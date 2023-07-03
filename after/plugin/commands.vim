@@ -1,4 +1,5 @@
-command Conf :vs ~/.config/nvim/
+command Conf :vs | Telescope find_files search_dirs={"~/.config/nvim"}
+command Cd :lcd %:p:h
 command Json :!python -m json.tool %
 
 " Python run pytest

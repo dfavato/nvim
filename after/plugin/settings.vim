@@ -8,10 +8,10 @@ set nowrap
 set nowritebackup
 set number
 set relativenumber
-set scrolloff=0 " Maintain cursor in the middle
+set scrolloff=5
 set shiftwidth=0
 set smarttab
-set updatetime=300
+set updatetime=40
 set cursorline
 set tags=tags
 set notagrelative
@@ -22,3 +22,4 @@ set list
 set shiftwidth=4 softtabstop=2 expandtab
 
 autocmd VimLeave * mksession! .session.vim
+let g:miniBufExplBuffersNeeded = 0

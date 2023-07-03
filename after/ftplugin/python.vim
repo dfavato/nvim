@@ -1,5 +1,4 @@
 setlocal shiftwidth=4 softtabstop=2 expandtab
-TSBufEnable highlight
 
 " Highlight trailing whitespace
 highlight pythonExtraWhitespace ctermbg=darkred guibg=darkred

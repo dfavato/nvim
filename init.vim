@@ -5,6 +5,7 @@ Plug 'almo7aya/openingh.nvim'  " Use OpenInGH command to open files in GitHub
 Plug 'ap/vim-css-color'  " Highlight colors in css
 Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Autocomplete
+Plug 'nvim-lualine/lualine.nvim'  " Status line
 Plug 'nvim-lua/plenary.nvim'  " Telescope dependency
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}  " Fuzzy search <c-p>
@@ -16,6 +17,7 @@ Plug 'ryanoasis/vim-devicons'  " Icons
 Plug 'sainnhe/edge' " Colorscheme
 Plug 'sheerun/vim-polyglot'  " Syntax highlighting
 Plug 'sindrets/diffview.nvim'  " :DiffviewOpen
+Plug 'stevearc/oil.nvim' " File explorer
 Plug 'tpope/vim-commentary'    " gcc for commenting
 Plug 'tpope/vim-fugitive'  " Git
 Plug 'tpope/vim-surround'  " Change quotes and brackets

@@ -1,8 +1,7 @@
 " Keyboard shortcuts
 map <space> <leader>
 nnoremap <leader>term :TerminalSplit bash<CR>
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F3> :TagbarOpenAutoClose<CR>
+nnoremap <F3> :TagbarToggle<CR>
 nnoremap <F5> :silent !ctags -R<CR>
 nnoremap <leader>pwd :echo expand("%:p")<CR>
 nnoremap <leader>ff :Telescope find_files<CR>
