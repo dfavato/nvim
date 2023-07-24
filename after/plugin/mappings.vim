@@ -7,6 +7,7 @@ nnoremap <leader>pwd :echo expand("%:p")<CR>
 nnoremap <leader>ff :Telescope find_files<CR>
 nnoremap <leader>ft :Telescope tags<CR>
 nnoremap <leader>fr :Telescope oldfiles<CR>
+nnoremap <leader>fh :Telescope help_tags<CR>
 nnoremap <C-p> :Telescope<CR>
 
 " Splits resizing

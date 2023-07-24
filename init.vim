@@ -34,3 +34,4 @@ colorscheme edge
 highlight NvimInternalError ctermbg=darkred guibg=darkred
 highlight! link RedrawDebugClear Substitute
 highlight SneakLabelMask ctermbg=NONE guibg=NONE
+highlight CursorLine guibg=#252525
