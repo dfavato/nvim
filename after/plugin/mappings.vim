@@ -15,3 +15,7 @@ nnoremap <M-j> :resize -2<CR>
 nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
+
+lua << EOF
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+EOF
