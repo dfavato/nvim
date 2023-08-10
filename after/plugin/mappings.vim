@@ -16,6 +16,10 @@ nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
+" Numbered motions are added to the jumplist
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : "") . 'j'
+
 lua << EOF
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 EOF
