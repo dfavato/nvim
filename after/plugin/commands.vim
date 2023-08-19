@@ -17,3 +17,4 @@ function RunPytest()
 	execute "!" . l:cmd
 endfunction
 command Test call RunPytest()
+command TestAll :!pipenv run pytest % --disable-warnings -vv

@@ -2,11 +2,12 @@ let g:python3_host_prog = "/home/dfavato/.local/share/virtualenvs/nvim-GR2Szmmv/
 
 call plug#begin()
 Plug 'almo7aya/openingh.nvim'  " Use OpenInGH command to open files in GitHub
+Plug 'andythigpen/nvim-coverage'
 Plug 'ap/vim-css-color'  " Highlight colors in css
 Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Autocomplete
-Plug 'nvim-lualine/lualine.nvim'  " Status line
 Plug 'nvim-lua/plenary.nvim'  " Telescope dependency
+Plug 'nvim-lualine/lualine.nvim'  " Status line
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}  " Fuzzy search <c-p>
 Plug 'nvim-tree/nvim-web-devicons'  " Icons
