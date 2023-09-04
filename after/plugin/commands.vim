@@ -10,11 +10,11 @@ function GetTestCommand()
 	catch /E684/
 		return "No function found"
 	endtry
-	return 'pipenv run pytest ' . l:file . '::' . l:func . ' --disable-warnings -vv'
+	return 'pipenv run python -m pytest ' . l:file . '::' . l:func . ' --disable-warnings -vv'
 endfunction
 function RunPytest()
 	let l:cmd = GetTestCommand()
 	execute "!" . l:cmd
 endfunction
 command Test call RunPytest()
-command TestAll :!pipenv run pytest % --disable-warnings -vv
+command TestAll :!pipenv run python -m pytest % --disable-warnings -vv

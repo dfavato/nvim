@@ -7,7 +7,7 @@ nnoremap <leader>pwd :echo expand("%:p")<CR>
 nnoremap <leader>ff :lua require("telescope.builtin").find_files({hidden=true})<CR>
 nnoremap <leader>fp :lua require("telescope.builtin").git_files({hidden=true})<CR>
 nnoremap <leader>fd :lua require("telescope.builtin").find_files({cwd="~/"})<CR>
-nnoremap <leader>fg :Telescope live_grep<CR>
+nnoremap <leader>fs :Telescope live_grep<CR>
 nnoremap <leader>ft :Telescope tags<CR>
 nnoremap <leader>fr :Telescope oldfiles<CR>
 nnoremap <leader>fh :Telescope help_tags<CR>
