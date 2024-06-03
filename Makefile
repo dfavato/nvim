@@ -1,4 +1,4 @@
-default: lazygit.checkpoint nvim ~/.gitconfig
+default: lazygit.checkpoint nvim ~/.gitconfig ~/.ssh/config
 
 apt.checkpoint: /etc/apt/sources.list.d/github-cli.list
 	sudo apt update
@@ -113,7 +113,13 @@ lazygit.checkpoint: /usr/local/bin/lazygit
 	sudo npm install -g tree-sitter-cli
 
 ~/.gitconfig:
-	ln $(PWD)/.gitconfig ~/.gitconfig 
+	ln -s $(PWD)/.gitconfig ~/.gitconfig
+
+~/.ssh/:
+	mkdir -p ~/.ssh
+
+~/.ssh/config: ~/.ssh/
+	ln -s $(PWD)/.ssh/config ~/.ssh/config
 
 clean/lazygit:
 	-rm lazygit.tar.gz

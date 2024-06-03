@@ -1,5 +1,3 @@
-let g:python3_host_prog = "/home/dfavato/.local/share/virtualenvs/nvim-GR2Szmmv/bin/python"
-
 call plug#begin()
 Plug 'almo7aya/openingh.nvim'  " Use OpenInGH command to open files in GitHub
 Plug 'andythigpen/nvim-coverage'
@@ -32,7 +30,7 @@ let g:edge_transparent_background = 1
 let g:edge_dim_inactive_windows = 1
 try
 	colorscheme edge
-catch /^Vim\%((\a\+)\)\=:E185:/ " catch error E123
+catch /^Vim\%((\a\+)\)\=:E185:/ " catch error E185
 	colorscheme darkblue
 endtry
 highlight NvimInternalError ctermbg=darkred guibg=darkred
@@ -40,3 +38,6 @@ highlight! link RedrawDebugClear Substitute
 highlight SneakLabelMask ctermbg=NONE guibg=NONE
 highlight CursorLine guibg=#252525
 let g:python3_host_prog = '~/.config/nvim/.venv/bin/python'
+
+syntax match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
