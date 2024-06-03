@@ -1,9 +1,10 @@
 [user]
-    name = dfavato
+    name = Danilo Favato
     email = dfavato@gmail.com
 
 [core]
     editor = nvim
+    excludesFile = ~/.gitignore
 
 [color]
     branch = auto

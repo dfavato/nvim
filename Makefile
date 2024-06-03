@@ -88,7 +88,7 @@ lazygit: lazygit.tar.gz
 /usr/local/bin/lazygit: lazygit
 	sudo install lazygit /usr/local/bin/lazygit
 
-lazygit.checkpoint: /usr/local/bin/lazygit
+lazygit.checkpoint: /usr/local/bin/lazygit ~/.config/lazygit/config.yml
 	touch lazygit.checkpoint
 	@echo "Lazygit installed!!"
 
@@ -121,11 +121,18 @@ lazygit.checkpoint: /usr/local/bin/lazygit
 ~/.ssh/config: ~/.ssh/
 	ln -s $(PWD)/.ssh/config ~/.ssh/config
 
+~/.config/lazygit/:
+	mkdir -p ~/.config/lazygit
+
+~/.config/lazygit/config.yml: ~/.config/lazygit/
+	ln -s $(PWD)/.config/lazygit/config.yml ~/.config/lazygit/config.yml
+
 clean/lazygit:
 	-rm lazygit.tar.gz
 	-rm lazygit
 	-sudo rm /usr/local/bin/lazygit
 	-rm lazygit.checkpoint
+	-rm -rf ~/.config/lazygit
 
 clean/nvim:
 	-rm -rf squashfs-root

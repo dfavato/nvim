@@ -1,0 +1,10 @@
+gui:
+    mouseEvents: false
+    showRandomTip: false
+    nerdFontsVersion: '3'
+    showIcons: true
+    skipDiscardChangeWarning: true
+git:
+    branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --oneline {{branchName}}'
+os:
+    editPreset: 'nvim'
