@@ -21,5 +21,3 @@ filetype plugin indent on
 
 set list
 set shiftwidth=4 softtabstop=2 expandtab
-
-let g:miniBufExplBuffersNeeded = 0

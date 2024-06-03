@@ -1,5 +1,8 @@
 lua << EOF
-local telescope = require("telescope")
+local ok, telescope = pcall(require, "telescope")
+if not ok then
+  return
+end
 local actions = require("telescope.actions")
 
 telescope.setup {

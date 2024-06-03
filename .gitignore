@@ -1,0 +1,7 @@
+*.swp
+.session.vim
+*.checkpoint
+squashfs-root/
+nvim.appimage
+lazygit.tar.gz
+lazygit

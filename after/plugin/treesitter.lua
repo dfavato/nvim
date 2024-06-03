@@ -1,3 +1,7 @@
+local ok, _ = pcall(require, "nvim-treesitter")
+if not ok then
+  return
+end
 require'nvim-treesitter.configs'.setup {
   -- List of parsers that are always installed
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python" , "javascript", "typescript", "sql", "html", "bash", "dockerfile", "fish", "htmldjango", "json", "latex", "markdown", "yaml", "vue", "svelte" },

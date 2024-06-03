@@ -1,6 +1,5 @@
 " Keyboard shortcuts
 map <space> <leader>
-nnoremap <leader>term :TerminalSplit bash<CR>
 nnoremap <F3> :TagbarToggle<CR>
 nnoremap <F5> :!git ls-files \| ctags --tag-relative -L -<CR>
 nnoremap <leader>pwd :echo expand("%:p")<CR>
@@ -26,5 +25,8 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : "") . 'j'
 nnoremap <leader>c <cmd>lua require('functions').edit_neovim()<CR>
 
 lua << EOF
-vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+local ok, _ = pcall(require, "oil")
+if ok then
+    vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+end
 EOF

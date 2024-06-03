@@ -22,7 +22,6 @@ Plug 'stevearc/oil.nvim' " File explorer
 Plug 'tpope/vim-commentary'    " gcc for commenting
 Plug 'tpope/vim-fugitive'  " Git
 Plug 'tpope/vim-surround'  " Change quotes and brackets
-Plug 'weynhamz/vim-plugin-minibufexpl'  " Buffer explorer
 call plug#end()
 
 
@@ -31,8 +30,13 @@ if has('termguicolors')
 endif
 let g:edge_transparent_background = 1
 let g:edge_dim_inactive_windows = 1
-colorscheme edge
+try
+	colorscheme edge
+catch /^Vim\%((\a\+)\)\=:E185:/ " catch error E123
+	colorscheme darkblue
+endtry
 highlight NvimInternalError ctermbg=darkred guibg=darkred
 highlight! link RedrawDebugClear Substitute
 highlight SneakLabelMask ctermbg=NONE guibg=NONE
 highlight CursorLine guibg=#252525
+let g:python3_host_prog = '~/.config/nvim/.venv/bin/python'
