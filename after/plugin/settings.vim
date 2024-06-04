@@ -16,6 +16,10 @@ set updatetime=40
 set tags=tags
 set notagrelative
 set exrc
+set foldmethod=expr
+set foldexpr=v:lua.vim.treesitter.foldexpr()
+set foldnestmax=4
+set foldlevelstart=3
 
 filetype plugin indent on
 

@@ -64,15 +64,4 @@ highlight link CocErrorVirtualText ErrorMsg
 highlight link CocWarningVirtualText WarningMsg
 highlight link CocInfoVirtualText MoreMsg
 highlight link CocHintVirtualText ModeMsg
-highlight link CocInlayHintType MoreMsg
-
-
 lua<<EOF
--- Highlight the symbol and its references on a CursorHold event(cursor is idle)
-vim.api.nvim_create_augroup("CocGroup", {})
-vim.api.nvim_create_autocmd("CursorHold", {
-    group = "CocGroup",
-    command = "silent call CocActionAsync('highlight')",
-    desc = "Highlight symbol under cursor on CursorHold"
-})
-EOF

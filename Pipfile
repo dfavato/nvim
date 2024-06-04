@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 pynvim = "*"
-jedi = "*"
-black = "*"
+darker = "*"
+isort = "*"
 
 [dev-packages]
 

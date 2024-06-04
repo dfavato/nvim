@@ -1,5 +1,6 @@
 " Keyboard shortcuts
 map <space> <leader>
+nnoremap <F2> :CocCommand document.toggleInlayHint<CR>
 nnoremap <F3> :TagbarToggle<CR>
 nnoremap <F5> :!git ls-files \| ctags --tag-relative -L -<CR>
 nnoremap <leader>pwd :echo expand("%:p")<CR>
@@ -18,6 +19,10 @@ nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
+" Folds
+nnoremap <UP> zm
+nnoremap <DOWN> zr
+
 " Numbered motions are added to the jumplist
 nnoremap <expr> k (v:count > 1 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : "") . 'j'
@@ -30,3 +35,6 @@ if ok then
     vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 end
 EOF
+
+" Workaround for wsltty not supporting some C-<key> mappings
+nnoremap  <C-]>

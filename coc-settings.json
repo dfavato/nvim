@@ -8,5 +8,7 @@
     "diagnostic.warningSign": "!",
     "diagnostic.infoSign": "i",
     "diagnostic.hintSign": ".",
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "darker",
+    "python.formatting.darkerPath": "~/.config/nvim/.venv/bin/darker",
+    "python.formatting.darkerArgs": ["-i",]
 }

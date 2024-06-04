@@ -1,8 +1,6 @@
 # nvim
-My nvim configuration
+My nvim configuration and some added apps for development.
 
 # Installation
 1. Copy the files to ~/.config/nvim/
-2. make install
-3. Open nvim and `:PlugInstall`
-4. Restart nvim
+2. make

@@ -9,6 +9,7 @@ Plug 'nvim-lualine/lualine.nvim'  " Status line
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}  " Fuzzy search <c-p>
 Plug 'nvim-tree/nvim-web-devicons'  " Icons
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " Improve highlights
 Plug 'preservim/tagbar'
 Plug 'pwntester/octo.nvim'  " GitHub insied vim
