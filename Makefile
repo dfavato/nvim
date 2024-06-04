@@ -27,7 +27,7 @@ squashfs-root/: nvim.appimage
 	sudo cp -r squashfs-root /
 
 /usr/bin/nvim: /squashfs-root/
-	sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+	sudo ln -s -b -i /squashfs-root/AppRun /usr/bin/nvim
 
 ~/.local/share/nvim/site/autoload/plug.vim: /usr/bin/nvim
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim \
@@ -113,19 +113,19 @@ lazygit.checkpoint: /usr/local/bin/lazygit ~/.config/lazygit/config.yml
 	sudo npm install -g tree-sitter-cli
 
 ~/.gitconfig:
-	ln -s $(PWD)/.gitconfig ~/.gitconfig
+	ln -s -b -i $(PWD)/.gitconfig ~/.gitconfig
 
 ~/.ssh/:
 	mkdir -p ~/.ssh
 
 ~/.ssh/config: ~/.ssh/
-	ln -s $(PWD)/.ssh/config ~/.ssh/config
+	ln -s -b -i $(PWD)/ssh_config ~/.ssh/config
 
 ~/.config/lazygit/:
 	mkdir -p ~/.config/lazygit
 
 ~/.config/lazygit/config.yml: ~/.config/lazygit/
-	ln -s $(PWD)/.config/lazygit/config.yml ~/.config/lazygit/config.yml
+	ln -s -b -i $(PWD)/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 
 clean/lazygit:
 	-rm lazygit.tar.gz
