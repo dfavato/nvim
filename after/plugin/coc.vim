@@ -33,7 +33,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
-function! ShowDocumentation()
+function ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
@@ -64,4 +64,3 @@ highlight link CocErrorVirtualText ErrorMsg
 highlight link CocWarningVirtualText WarningMsg
 highlight link CocInfoVirtualText MoreMsg
 highlight link CocHintVirtualText ModeMsg
-lua<<EOF

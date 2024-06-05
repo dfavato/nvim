@@ -6,7 +6,9 @@ command Json :!python -m json.tool %
 function GetTestCommand()
 	let l:file = expand('%:p')
 	try
+    normal [[
 		let l:func = matchlist(getline('.'), 'def \(\w\+\)')[1]
+    exe "normal \<C-o>"
 	catch /E684/
 		return "No function found"
 	endtry

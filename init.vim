@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'almo7aya/openingh.nvim'  " Use OpenInGH command to open files in GitHub
+Plug 'akinsho/toggleterm.nvim' " Terminal
 Plug 'andythigpen/nvim-coverage'
 Plug 'ap/vim-css-color'  " Highlight colors in css
 Plug 'github/copilot.vim'
@@ -21,6 +22,10 @@ Plug 'stevearc/oil.nvim' " File explorer
 Plug 'tpope/vim-commentary'    " gcc for commenting
 Plug 'tpope/vim-fugitive'  " Git
 Plug 'tpope/vim-surround'  " Change quotes and brackets
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-neotest/neotest-python'
 call plug#end()
 
 
@@ -42,3 +47,19 @@ let g:python3_host_prog = '~/.config/nvim/.venv/bin/python'
 
 syntax match ExtraWhitespace /\s\+$/
 highlight ExtraWhitespace ctermbg=red guibg=red
+
+" WSL clipboard (directly from help)
+if executable('clip.exe') && executable('powershell.exe')
+    let g:clipboard = {
+                \   'name': 'WslClipboard',
+                \   'copy': {
+                \      '+': 'clip.exe',
+                \      '*': 'clip.exe',
+                \    },
+                \   'paste': {
+                \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \   },
+                \   'cache_enabled': 0,
+                \ }
+end

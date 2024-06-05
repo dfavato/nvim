@@ -1,8 +1,6 @@
 " Keyboard shortcuts
 map <space> <leader>
 nnoremap <F2> :CocCommand document.toggleInlayHint<CR>
-nnoremap <F3> :TagbarToggle<CR>
-nnoremap <F5> :!git ls-files \| ctags --tag-relative -L -<CR>
 nnoremap <leader>pwd :echo expand("%:p")<CR>
 nnoremap <leader>ff :lua require("telescope.builtin").find_files({hidden=true})<CR>
 nnoremap <leader>fp :lua require("telescope.builtin").git_files({hidden=true})<CR>

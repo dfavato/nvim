@@ -21,7 +21,9 @@ set foldexpr=v:lua.vim.treesitter.foldexpr()
 set foldnestmax=4
 set foldlevelstart=3
 
+filetype on
 filetype plugin indent on
 
 set list
 set shiftwidth=4 softtabstop=2 expandtab
+set laststatus=3

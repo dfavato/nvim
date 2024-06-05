@@ -1,22 +1,25 @@
-default: lazygit.checkpoint nvim ~/.gitconfig ~/.ssh/config
+default: nvim lazygit.checkpoint ~/.gitconfig ~/.ssh/config
 
-apt.checkpoint: /etc/apt/sources.list.d/github-cli.list
+apt.checkpoint: | /etc/apt/sources.list.d/github-cli.list
 	sudo apt update
+	sudo apt-get install -yq build-essential gdb lcov pkg-config \
+		libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+		libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+		lzma lzma-dev tk-dev uuid-dev zlib1g-dev libmpdec-dev
 	touch apt.checkpoint
 
 /usr/bin/cmake: apt.checkpoint
 	sudo apt install cmake -y
-	sudo touch /usr/bin/cmake
 
 /usr/bin/pipx: apt.checkpoint
 	sudo apt install --user pipx
 	sudo pipx ensurepath
 
-~/.local/bin/ansible: /usr/bin/pipx
+~/.local/bin/ansible: | /usr/bin/pipx
 	pipx install --include-deps ansible
 	pipx inject --include-apps ansible argcomplete
 
-nvim.appimage: /usr/bin/wget
+nvim.appimage: | /usr/bin/wget
 	wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && \
 	chmod u+x nvim.appimage
 
@@ -29,20 +32,18 @@ squashfs-root/: nvim.appimage
 /usr/bin/nvim: /squashfs-root/
 	sudo ln -s -b -i /squashfs-root/AppRun /usr/bin/nvim
 
-~/.local/share/nvim/site/autoload/plug.vim: /usr/bin/nvim
+~/.local/share/nvim/site/autoload/plug.vim: | /usr/bin/nvim
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim \
 	    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 /usr/bin/node: apt.checkpoint
 	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
 		sudo apt-get install -y nodejs
-	sudo touch /usr/bin/node
 
 /usr/bin/pip3: apt.checkpoint
 	sudo apt install python3-pip -y
-	sudo touch /usr/bin/pip3
 
-/usr/local/bin/pipenv: /usr/bin/pip3
+/usr/local/bin/pipenv: | /usr/bin/pip3
 	pip3 install pipenv --user
 	sudo touch /usr/local/bin/pipenv
 
@@ -62,7 +63,16 @@ squashfs-root/: nvim.appimage
 	sudo apt install git -y
 	sudo touch /usr/bin/git
 
-.venv/: /usr/local/bin/pipenv
+~/.pyenv: | /usr/bin/git
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+~/.bashrc: | ~/.pyenv
+	echo "\n\n# pyenv auto configuration" >> ~/.bashrc
+	echo 'export PYENV_ROOT="$$HOME/.pyenv"' >> ~/.bashrc
+	echo 'export PATH="$$PYENV_ROOT/bin:$$PATH"' >> ~/.bashrc
+	echo 'eval "$$(pyenv init --path)"' >> ~/.bashrc
+
+.venv/: | /usr/local/bin/pipenv ~/.bashrc
 	pipenv sync
 
 /usr/lib/node_modules/neovim/: /usr/bin/node
@@ -125,7 +135,7 @@ lazygit.checkpoint: /usr/local/bin/lazygit ~/.config/lazygit/config.yml
 	mkdir -p ~/.config/lazygit
 
 ~/.config/lazygit/config.yml: ~/.config/lazygit/
-	ln -s -b -i $(PWD)/.config/lazygit/config.yml ~/.config/lazygit/config.yml
+	ln -s -b -i $(PWD)/lazygit_config.yml ~/.config/lazygit/config.yml
 
 clean/lazygit:
 	-rm lazygit.tar.gz
