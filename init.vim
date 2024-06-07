@@ -26,6 +26,10 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'nvim-neotest/nvim-nio'
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
+Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-dispatch'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
 call plug#end()
 
 
