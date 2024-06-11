@@ -36,3 +36,7 @@ EOF
 
 " Workaround for wsltty not supporting some C-<key> mappings
 nnoremap  <C-]>
+
+" Managing buffers
+nnoremap <tab> :bnext<CR>
+nnoremap <s-tab> :bprevious<CR>

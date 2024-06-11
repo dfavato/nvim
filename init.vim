@@ -30,6 +30,8 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-dispatch'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
+Plug 'ap/vim-buftabline'
+Plug 'folke/flash.nvim'
 call plug#end()
 
 

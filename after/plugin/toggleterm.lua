@@ -8,32 +8,38 @@ toggleterm.setup {
         vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<Esc>", "<C-\\><C-n>", {noremap = true})
     end,
 }
+-- , sends line to terminal
 vim.keymap.set(
-    "n", "<Enter>",
+    "n", ",",
     function() require("toggleterm").send_lines_to_terminal("single_line", true, {args = vim.v.count}) end,
     {noremap = true}
 )
+-- , sends selected lines to terminal
 vim.keymap.set(
-    "v", "<Enter>",
+    "v", ",",
     function () require("toggleterm").send_lines_to_terminal("visual_lines", true, {args = vim.v.count}) end,
     {noremap = true}
 )
+-- <space>, sends selection to terminal
 vim.keymap.set(
     "v", "<leader>s",
     function () require("toggleterm").send_lines_to_terminal("visual_selection", false, {args = vim.v.count}) end,
     {noremap = true}
 )
+-- <space>, sends line to terminal (does not trim whitespace)
 vim.keymap.set(
-    "n", "<leader><Enter>",
+    "n", "<space>,",
     function () require("toggleterm").send_lines_to_terminal("single_line", false, {args = vim.v.count}) end,
     {noremap = true}
 )
+-- <space>, sends selected lines to terminal (does not trim whitespace)
 vim.keymap.set(
-    "v", "<leader><Enter>",
+    "v", "<space>,",
     function () require("toggleterm").send_lines_to_terminal("visual_lines", false, {args = vim.v.count}) end,
     {noremap = true}
 )
 vim.keymap.set("n", "<F3>", "<cmd>ToggleTerm size=5<CR>", {noremap = true})
+vim.keymap.set("t", "<F3>", "<cmd>ToggleTerm size=5<CR>", {noremap = true})
 
 local bash = require("toggleterm.terminal").Terminal:new({
     cmd = "bash",
