@@ -6,6 +6,7 @@ neotest.setup {
     adapters = {
         require("neotest-python")({
                 runner = "pytest",
+                args = {"-q", "--showlocals", "--disable-warnings", "--no-cov", "--no-header"},
             })
     },
 }

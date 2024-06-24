@@ -27,13 +27,23 @@ set list
 set shiftwidth=4 softtabstop=2 expandtab
 set laststatus=3
 
+set fileformats=unix,dos,mac
+
 function IsFloatingWindow()
     return win_gettype(win_getid()) ==# 'popup'
+endfunction
+
+function IsTerminalWindow()
+    return &buftype ==# 'terminal'
+endfunction
+
+function ShouldHideWinbar()
+    return IsFloatingWindow() || IsTerminalWindow()
 endfunction
 
 set winbar=
 augroup Winbar
     autocmd!
     autocmd WinEnter * setlocal winbar=
-    autocmd WinLeave * if !IsFloatingWindow() | setlocal winbar=%n\ %.20f | endif
+    autocmd WinLeave * if !ShouldHideWinbar() | setlocal winbar=%n\ %.40f | endif
 augroup END
