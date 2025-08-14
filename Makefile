@@ -19,12 +19,12 @@ apt.checkpoint: | /etc/apt/sources.list.d/github-cli.list
 	pipx install --include-deps ansible
 	pipx inject --include-apps ansible argcomplete
 
-nvim.appimage: | /usr/bin/wget
-	wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && \
-	chmod u+x nvim.appimage
+nvim-linux-x86_64.appimage: | /usr/bin/wget
+	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage && \
+	chmod u+x nvim-linux-x86_64.appimage
 
-squashfs-root/: nvim.appimage
-	./nvim.appimage --appimage-extract
+squashfs-root/: nvim-linux-x86_64.appimage
+	./nvim-linux-x86_64.appimage --appimage-extract
 
 /squashfs-root/: squashfs-root/
 	sudo cp -r squashfs-root /

@@ -4,11 +4,8 @@
     "diagnostic.virtualText": true,
     "suggest.enablePreselect": true,
     "suggest.noselect": true,
-    "diagnostic.errorSign": "x",
-    "diagnostic.warningSign": "!",
-    "diagnostic.infoSign": "i",
-    "diagnostic.hintSign": ".",
     "python.formatting.provider": "darker",
     "python.formatting.darkerPath": "~/.config/nvim/.venv/bin/darker",
-    "python.formatting.darkerArgs": ["-i",]
+    "python.formatting.darkerArgs": ["-i",],
+    "inlayHint.display": false
 }

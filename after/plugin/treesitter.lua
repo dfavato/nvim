@@ -4,7 +4,9 @@ if not ok then
 end
 require'nvim-treesitter.configs'.setup {
   -- List of parsers that are always installed
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python" , "javascript", "typescript", "sql", "html", "bash", "dockerfile", "fish", "htmldjango", "json", "latex", "markdown", "yaml", "vue", "svelte" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python" ,
+  "javascript", "typescript", "sql", "html", "bash", "dockerfile", "fish",
+  "htmldjango", "json", "latex", "markdown", "yaml", "vue", "svelte" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -16,5 +18,21 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true,
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["as"] = "@statement.outer",
+      },
+    },
   },
 }

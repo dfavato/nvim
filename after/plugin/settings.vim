@@ -15,10 +15,8 @@ set smarttab
 set updatetime=40
 set tags=tags
 set notagrelative
-set exrc
-set foldmethod=expr
-set foldexpr=v:lua.vim.treesitter.foldexpr()
 set foldlevelstart=3
+set path+=**
 
 filetype on
 filetype plugin indent on
@@ -41,9 +39,8 @@ function ShouldHideWinbar()
     return IsFloatingWindow() || IsTerminalWindow()
 endfunction
 
-set winbar=
+set winbar=%n\ %.80f
 augroup Winbar
     autocmd!
-    autocmd WinEnter * setlocal winbar=
-    autocmd WinLeave * if !ShouldHideWinbar() | setlocal winbar=%n\ %.40f | endif
+    autocmd WinEnter * if ShouldHideWinbar() | setlocal winbar= | endif
 augroup END

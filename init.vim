@@ -1,6 +1,4 @@
 call plug#begin()
-Plug 'almo7aya/openingh.nvim'  " Use OpenInGH command to open files in GitHub
-Plug 'akinsho/toggleterm.nvim' " Terminal
 Plug 'andythigpen/nvim-coverage'
 Plug 'ap/vim-css-color'  " Highlight colors in css
 Plug 'github/copilot.vim'
@@ -10,15 +8,16 @@ Plug 'nvim-lualine/lualine.nvim'  " Status line
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}  " Fuzzy search <c-p>
 Plug 'nvim-tree/nvim-web-devicons'  " Icons
-Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " Improve highlights
-Plug 'preservim/tagbar'
+Plug 'nvim-treesitter/nvim-treesitter-context'  " Show context at top of window
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'  " Extra text objects
 Plug 'pwntester/octo.nvim'  " GitHub insied vim
 Plug 'ryanoasis/vim-devicons'  " Icons
 Plug 'sainnhe/edge' " Colorscheme
-Plug 'sheerun/vim-polyglot'  " Syntax highlighting
+" Plug 'sheerun/vim-polyglot'  " Syntax highlighting
 Plug 'sindrets/diffview.nvim'  " :DiffviewOpen
 Plug 'stevearc/oil.nvim' " File explorer
+Plug 'refractalize/oil-git-status.nvim'
 Plug 'tpope/vim-commentary'    " gcc for commenting
 Plug 'tpope/vim-fugitive'  " Git
 Plug 'tpope/vim-surround'  " Change quotes and brackets
@@ -27,11 +26,13 @@ Plug 'nvim-neotest/nvim-nio'
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
 Plug 'tpope/vim-dadbod'
-Plug 'tpope/vim-dispatch'
-Plug 'kristijanhusak/vim-dadbod-ui'
-Plug 'kristijanhusak/vim-dadbod-completion'
-Plug 'ap/vim-buftabline'
-Plug 'folke/flash.nvim'
+Plug 'tpope/vim-dispatch' " :Make and async build
+Plug 'kristijanhusak/vim-dadbod-ui' " :DBUI
+Plug 'kristijanhusak/vim-dadbod-completion' " SQL autocompletion
+"Plug 'ap/vim-buftabline'
+Plug 'folke/flash.nvim' " Easy motions
+Plug 'goerz/jupytext.vim' " Jupyter support
+Plug 'MattesGroeger/vim-bookmarks'
 call plug#end()
 
 
@@ -48,11 +49,7 @@ endtry
 highlight NvimInternalError ctermbg=darkred guibg=darkred
 highlight! link RedrawDebugClear Substitute
 highlight SneakLabelMask ctermbg=NONE guibg=NONE
-highlight CursorLine guibg=#252525
 let g:python3_host_prog = '~/.config/nvim/.venv/bin/python'
-
-syntax match ExtraWhitespace /\s\+$/
-highlight ExtraWhitespace ctermbg=red guibg=red
 
 " WSL clipboard (directly from help)
 if executable('clip.exe') && executable('powershell.exe')

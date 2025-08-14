@@ -9,6 +9,7 @@ require("oil").setup({
     win_options = {
         number = true,
         relativenumber = true,
+        signcolumn = "yes:2",
     }
 })
 EOF

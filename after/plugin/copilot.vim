@@ -1,3 +1,4 @@
 " Copilot mappping
-imap <silent><script><expr> <C-f> copilot#Accept("")
+imap <C-f> <Plug>(copilot-accept-line)
+imap <silent><script><expr> <DOWN> copilot#Accept("")
 let g:copilot_no_tab_map = v:true

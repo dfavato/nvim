@@ -5,8 +5,9 @@ end
 neotest.setup {
     adapters = {
         require("neotest-python")({
-                runner = "pytest",
-                args = {"-q", "--showlocals", "--disable-warnings", "--no-cov", "--no-header"},
-            })
+            runner = "pytest",
+            args = { "-q", "-vv", "--showlocals", "--disable-warnings", "--no-cov", "--no-header" },
+        })
     },
 }
+vim.keymap.set("n", "<F12>", "<cmd>Neotest summary<cr>", { noremap = true, silent = true, desc = "Neotest summary" })

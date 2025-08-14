@@ -2,6 +2,6 @@
 .session.vim
 *.checkpoint
 squashfs-root/
-nvim.appimage
+*.appimage*
 lazygit.tar.gz
 lazygit

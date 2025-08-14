@@ -1,9 +1,9 @@
 " Keyboard shortcuts
 map <space> <leader>
 nnoremap <F2> :CocCommand document.toggleInlayHint<CR>
-nnoremap <leader>pwd :echo expand("%:p")<CR>
 nnoremap <leader>ff :lua require("telescope.builtin").find_files({hidden=true})<CR>
 nnoremap <leader>fp :lua require("telescope.builtin").git_files({hidden=true})<CR>
+nnoremap <leader>b :lua require("telescope.builtin").buffers()<CR>
 nnoremap <leader>fd :lua require("telescope.builtin").find_files({cwd="~/"})<CR>
 nnoremap <leader>fs :Telescope live_grep<CR>
 nnoremap <leader>ft :Telescope tags<CR>
@@ -40,3 +40,5 @@ nnoremap  <C-]>
 " Managing buffers
 nnoremap <tab> :bnext<CR>
 nnoremap <s-tab> :bprevious<CR>
+
+tnoremap <esc><esc> <C-\><C-n>
