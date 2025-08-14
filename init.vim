@@ -1,4 +1,6 @@
 call plug#begin()
+Plug 'mfussenegger/nvim-dap'  " Debugging
+Plug 'igorlfs/nvim-dap-view'  " Debugging UI
 Plug 'andythigpen/nvim-coverage'
 Plug 'ap/vim-css-color'  " Highlight colors in css
 Plug 'github/copilot.vim'
