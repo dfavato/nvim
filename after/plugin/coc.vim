@@ -37,7 +37,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <leader>d <Plug>(coc-float-hide)
+nmap <silent> <C-W>d <Plug>(coc-float-hide)
 nmap <silent> <C-W>f <Plug>(coc-float-jump)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
