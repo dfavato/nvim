@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'j-morano/buffer_manager.nvim' " Buffer management
 Plug 'mfussenegger/nvim-dap'  " Debugging
 Plug 'igorlfs/nvim-dap-view'  " Debugging UI
 Plug 'andythigpen/nvim-coverage'
@@ -16,7 +17,6 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'  " Extra text objects
 Plug 'pwntester/octo.nvim'  " GitHub insied vim
 Plug 'ryanoasis/vim-devicons'  " Icons
 Plug 'sainnhe/edge' " Colorscheme
-" Plug 'sheerun/vim-polyglot'  " Syntax highlighting
 Plug 'sindrets/diffview.nvim'  " :DiffviewOpen
 Plug 'stevearc/oil.nvim' " File explorer
 Plug 'refractalize/oil-git-status.nvim'
@@ -31,7 +31,6 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-dispatch' " :Make and async build
 Plug 'kristijanhusak/vim-dadbod-ui' " :DBUI
 Plug 'kristijanhusak/vim-dadbod-completion' " SQL autocompletion
-"Plug 'ap/vim-buftabline'
 Plug 'folke/flash.nvim' " Easy motions
 Plug 'goerz/jupytext.vim' " Jupyter support
 Plug 'MattesGroeger/vim-bookmarks'
