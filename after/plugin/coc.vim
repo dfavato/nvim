@@ -55,6 +55,7 @@ inoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float
 inoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 vnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 vnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+nnoremap <silent><F2> :CocCommand document.toggleInlayHint<CR>
 nnoremap <silent><F3> :call CocActionAsync('showOutline')<CR>
 nnoremap <silent><F4> :call CocActionAsync('showIncomingCalls')<CR>
 nnoremap <silent><F5> :call CocActionAsync('showSubTypes')<CR>
@@ -63,7 +64,7 @@ nnoremap <silent><F5> :call CocActionAsync('showSubTypes')<CR>
 command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:OR` command for organize imports of the current buffer
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Highlight
 highlight link CocErrorVirtualText ErrorMsg

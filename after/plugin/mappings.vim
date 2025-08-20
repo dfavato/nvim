@@ -1,15 +1,5 @@
 " Keyboard shortcuts
 map <space> <leader>
-nnoremap <F2> :CocCommand document.toggleInlayHint<CR>
-nnoremap <leader>ff :lua require("telescope.builtin").find_files({hidden=true})<CR>
-nnoremap <leader>fp :lua require("telescope.builtin").git_files({hidden=true})<CR>
-nnoremap <leader>b :lua require("telescope.builtin").buffers()<CR>
-nnoremap <leader>fd :lua require("telescope.builtin").find_files({cwd="~/"})<CR>
-nnoremap <leader>fs :Telescope live_grep<CR>
-nnoremap <leader>ft :Telescope tags<CR>
-nnoremap <leader>fr :Telescope oldfiles<CR>
-nnoremap <leader>fh :Telescope help_tags<CR>
-nnoremap <C-p> :Telescope<CR>
 
 " Splits resizing
 nnoremap <M-j> :resize -2<CR>
