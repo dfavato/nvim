@@ -28,4 +28,11 @@ return {
         "goerz/jupytext.vim",  -- Jupyter support
         lazy = false,
     },
+    {
+        "sphamba/smear-cursor.nvim",
+        lazy = false,
+        opts = {
+            smear_to_cmd = false,
+        },
+    },
 }
