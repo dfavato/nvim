@@ -18,6 +18,10 @@ set notagrelative
 set foldlevelstart=3
 set path+=**
 
+if has('termguicolors')
+  set termguicolors
+endif
+
 filetype on
 filetype plugin indent on
 
@@ -44,3 +48,23 @@ augroup Winbar
     autocmd!
     autocmd WinEnter * if ShouldHideWinbar() | setlocal winbar= | endif
 augroup END
+
+let g:edge_transparent_background = 1
+let g:edge_dim_inactive_windows = 1
+let g:python3_host_prog = '~/.config/nvim/.venv/bin/python'
+
+" WSL clipboard (directly from help)
+if executable('clip.exe') && executable('powershell.exe')
+    let g:clipboard = {
+                \   'name': 'WslClipboard',
+                \   'copy': {
+                \      '+': 'clip.exe',
+                \      '*': 'clip.exe',
+                \    },
+                \   'paste': {
+                \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \   },
+                \   'cache_enabled': 0,
+                \ }
+end

@@ -7,5 +7,6 @@
     "python.formatting.provider": "darker",
     "python.formatting.darkerPath": "~/.config/nvim/.venv/bin/darker",
     "python.formatting.darkerArgs": ["-i",],
-    "inlayHint.display": false
+    "inlayHint.display": false,
+    "Lua.diagnostics.globals": ["vim"]
 }

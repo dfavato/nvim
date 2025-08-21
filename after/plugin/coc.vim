@@ -66,11 +66,5 @@ command! -nargs=0 Format :call CocActionAsync('format')
 " Add `:OR` command for organize imports of the current buffer
 command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-" Highlight
-highlight link CocErrorVirtualText ErrorMsg
-highlight link CocWarningVirtualText WarningMsg
-highlight link CocInfoVirtualText MoreMsg
-highlight link CocHintVirtualText ModeMsg
-
 command -nargs=0 OpenInGH :CocCommand git.browserOpen
 command -nargs=0 CopyUrl :CocCommand git.copyUrl
