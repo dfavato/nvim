@@ -33,6 +33,10 @@ return {
         lazy = false,
         opts = {
             smear_to_cmd = false,
+            legacy_computing_symbols_support = true,
+            smear_between_neighbor_lines = false,
+            smear_insert_mode = false,
+            never_draw_over_target = true,
         },
     },
 }
