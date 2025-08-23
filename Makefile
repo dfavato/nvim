@@ -32,10 +32,6 @@ squashfs-root/: nvim-linux-x86_64.appimage
 /usr/bin/nvim: /squashfs-root/
 	sudo ln -s -b -i /squashfs-root/AppRun /usr/bin/nvim
 
-~/.local/share/nvim/site/autoload/plug.vim: | /usr/bin/nvim
-	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim \
-	    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 /usr/bin/node: apt.checkpoint
 	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
 		sudo apt-get install -y nodejs
@@ -78,11 +74,10 @@ squashfs-root/: nvim-linux-x86_64.appimage
 /usr/lib/node_modules/neovim/: /usr/bin/node
 	sudo npm install -g neovim
 
-nvim.checkpoint: ~/.local/share/nvim/site/autoload/plug.vim /usr/bin/nvim \
+nvim.checkpoint: /usr/bin/nvim \
 	/usr/lib/node_modules/neovim/ .venv/ /usr/bin/fdfind /usr/bin/ripgrep \
 	/usr/bin/fzy /usr/bin/git /usr/bin/gh /usr/bin/tree-sitter \
 	/usr/bin/cmake
-	nvim --headless +PlugInstall +qa
 	touch nvim.checkpoint
 
 nvim: nvim.checkpoint
