@@ -132,6 +132,10 @@ lazygit.checkpoint: /usr/local/bin/lazygit ~/.config/lazygit/config.yml
 ~/.config/lazygit/config.yml: ~/.config/lazygit/
 	ln -s -b -i $(PWD)/lazygit_config.yml ~/.config/lazygit/config.yml
 
+/usr/bin/delta: apt.checkpoint
+	wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
+	sudo dpkg -i git-delta_0.18.2_amd64.deb
+
 clean/lazygit:
 	-rm lazygit.tar.gz
 	-rm lazygit

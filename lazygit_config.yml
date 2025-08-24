@@ -7,6 +7,9 @@ gui:
     sidePanelWidth: 0.25
 git:
     branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --oneline {{branchName}}'
+    paging:
+      colorArg: always
+      pager: delta --dark --paging=never --line-numbers
 os:
     editPreset: 'nvim'
 quitOnTopLevelReturn: true
