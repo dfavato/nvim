@@ -19,6 +19,7 @@ return {
             },
             lualine_c = {
                 "diff",
+                { "filetype", icon_only = true },
                 "filename",
                 breadcrumbs,
             },
@@ -26,7 +27,6 @@ return {
                 {"diagnostics", sources={"coc"}},
                 "encoding",
                 "fileformat",
-                "filetype"
             },
             lualine_y = { "progress" },
             lualine_z = { "location" },
