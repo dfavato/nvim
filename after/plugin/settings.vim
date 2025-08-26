@@ -10,11 +10,8 @@ set number
 set relativenumber
 set scrolloff=5
 set sidescroll=10
-set shiftwidth=0
 set smarttab
 set updatetime=40
-set tags=tags
-set notagrelative
 set foldlevelstart=3
 set path+=**
 
