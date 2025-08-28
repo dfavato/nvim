@@ -39,6 +39,7 @@ return {
                     { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle Breakpoint" },
                     { "<leader>dc", "<cmd>DapContinue<cr>", desc = "Continue" },
                     { "<leader>dn", "<cmd>DapStepOver<cr>", desc = "Step Over" },
+                    { "<leader>dq", "<cmd>DapTerminate<cr>", desc = "Quit" },
                 },
                 cmd = { "DapNew", "DapContinue", "DapStepOver", "DapStepInto", "DapStepOut", "DapTerminate" },
                 init = function()
