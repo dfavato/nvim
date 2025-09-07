@@ -23,7 +23,6 @@ return {
             lualine_c = {
                 "diff",
                 { "filetype", icon_only = true },
-                "filename",
                 breadcrumbs,
             },
             lualine_x = {

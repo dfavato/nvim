@@ -1,5 +1,4 @@
 setlocal wrap
-setlocal formatoptions=tancw
 
 augroup Markdown
     autocmd!

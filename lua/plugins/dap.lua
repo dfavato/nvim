@@ -12,6 +12,7 @@ return {
                     "breakpoints",
                     "watches",
                     "sessions",
+                    "exceptions",
                 },
             }
         },
@@ -69,8 +70,15 @@ return {
                 ft = { "python" },
                 config = function()
                     require("dap-python").setup(vim.g.python3_host_prog)
-                    require('dap').defaults.python.exception_breakpoints = { 'raised', 'uncaught', 'userUnhandled' }
+                    require('dap').defaults.python.exception_breakpoints = { 'uncaught', 'userUnhandled' }
                 end,
+                dependencies = {
+                    {
+                        "theHamsta/nvim-dap-virtual-text",
+                        opts = { enable_commands = true },
+                        cmd = { "DapVirtualTextEnable", "DapVirtualTextDisable" }
+                    }
+                }
             }
         }
     }

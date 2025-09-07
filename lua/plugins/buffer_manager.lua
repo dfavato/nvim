@@ -6,7 +6,7 @@ return {
     "j-morano/buffer_manager.nvim",  -- Buffer management
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-        { "<leader>b", open }
+        { "<leader>b", open, desc = "Buffer Manager" },
     },
     opts = {
         show_indicators = "before",

@@ -13,7 +13,7 @@ return {
         { '<leader>ot', function() require('opencode').toggle() end,                           desc = 'Toggle embedded opencode', },
         { '<leader>on', function() require('opencode').command('session_new') end,             desc = 'New session', },
         { '<leader>oy', function() require('opencode').command('messages_copy') end,           desc = 'Copy last message', },
-        { '<leader>op', function() require('opencode').select_prompt() end,                    desc = 'Select prompt',                mode = { 'n', 'v', }, },
+        { '<leader>op', function() require('opencode').select() end,                    desc = 'Select prompt',                mode = { 'n', 'v', }, },
         { '<PAGEUP>',   function() require('opencode').command('messages_half_page_up') end,   desc = 'Scroll messages up', },
         { '<PAGEDOWN>', function() require('opencode').command('messages_half_page_down') end, desc = 'Scroll messages down', },
         -- Example: keymap for custom prompt

@@ -115,10 +115,10 @@ vim.keymap.set('v', '<C-k>', function()
 end, { expr = true, silent = true, nowait = true })
 
 -- Function key mappings
-vim.keymap.set('n', '<F2>', ':CocCommand document.toggleInlayHint<CR>', { silent = true })
-vim.keymap.set('n', '<F3>', function() vim.fn.CocActionAsync('showOutline') end, { silent = true })
-vim.keymap.set('n', '<F4>', function() vim.fn.CocActionAsync('showIncomingCalls') end, { silent = true })
-vim.keymap.set('n', '<F5>', function() vim.fn.CocActionAsync('showSubTypes') end, { silent = true })
+vim.keymap.set('n', '<F2>', ':CocCommand document.toggleInlayHint<CR>', { silent = true, desc = 'Toggle inlay hints' })
+vim.keymap.set('n', '<F3>', function() vim.fn.CocActionAsync('showOutline') end, { silent = true, desc = 'Show outline' })
+vim.keymap.set('n', '<F4>', function() vim.fn.CocActionAsync('showIncomingCalls') end, { silent = true, desc = 'Show incoming calls' })
+vim.keymap.set('n', '<F5>', function() vim.fn.CocActionAsync('showSubTypes') end, { silent = true, desc = 'Show sub types' })
 
 -- Custom commands
 vim.api.nvim_create_user_command('Format', function() vim.fn.CocActionAsync('format') end, { nargs = 0 })

@@ -13,6 +13,7 @@ set sidescroll=10
 set smarttab
 set updatetime=40
 set foldlevelstart=3
+set foldmethod=indent
 set path+=**
 
 if has('termguicolors')
