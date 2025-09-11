@@ -36,6 +36,9 @@ squashfs-root/: nvim-linux-x86_64.appimage
 	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
 		sudo apt-get install -y nodejs
 
+/usr/bin/opencode:
+	sudo npm i -g opencode-ai@latest
+
 /usr/bin/pip3: apt.checkpoint
 	sudo apt install python3-pip -y
 
@@ -124,13 +127,13 @@ lazygit.checkpoint: /usr/local/bin/lazygit ~/.config/lazygit/config.yml
 	mkdir -p ~/.ssh
 
 ~/.ssh/config: ~/.ssh/
-	ln -s -b -i $(PWD)/ssh_config ~/.ssh/config
+	ln -b -i $(PWD)configs/ssh/config ~/.ssh/config
 
 ~/.config/lazygit/:
 	mkdir -p ~/.config/lazygit
 
 ~/.config/lazygit/config.yml: ~/.config/lazygit/
-	ln -s -b -i $(PWD)/lazygit_config.yml ~/.config/lazygit/config.yml
+	ln -s -b -i $(PWD)/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 
 /usr/bin/delta: apt.checkpoint
 	wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
@@ -152,6 +155,9 @@ clean/nvim:
 	-rm -rf ~/.local/share/nvim
 	-rm -rf .venv/
 
-clean: clean/nvim clean/lazygit
+clean/opencode:
+	-sudo npm uninstall -g opencode-ai
+
+clean: clean/nvim clean/lazygit clean/opencode
 	-rm *.checkpoint
 	-rm ~/.gitconfig

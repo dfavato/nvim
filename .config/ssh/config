@@ -1,0 +1,25 @@
+Host git-codecommit.*.amazonaws.com
+    User APKAW2LZR3XLSDGSOR56
+
+Host yunohost
+    HostName 192.168.15.75
+    User dfavato_admin
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github
+
+
+Host dfavato
+    HostName ssh.dfavato.com.br
+    ProxyCommand cloudflared access ssh --hostname %h
+    User dfavato_admin
+
+Host smartb.dfavato.com.br
+    HostName 192.168.15.75
+    User dfavato_admin
+
+Host smartb.ia.br
+    HostName 159.203.104.153
+    User root
