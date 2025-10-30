@@ -1,8 +1,8 @@
 return {
-    {
-        "ap/vim-css-color",  -- Highlight colors in css
-        lazy = false,
-    },
+    -- {
+    --     "ap/vim-css-color",  -- Highlight colors in css
+    --     lazy = false,
+    -- },
     {
         "sindrets/diffview.nvim",
         cmd = { "DiffviewOpen" },
@@ -10,7 +10,7 @@ return {
     },
     {
         "tpope/vim-fugitive",
-        cmd = "Git",
+        cmd = {"Git", "Gdiffsplit", "GBrowse" },
     },
     {
         "tpope/vim-surround",  -- Change quotes and brackets
@@ -28,15 +28,15 @@ return {
         "goerz/jupytext.vim",  -- Jupyter support
         lazy = false,
     },
-    {
-        "sphamba/smear-cursor.nvim",
-        lazy = false,
-        opts = {
-            smear_to_cmd = false,
-            legacy_computing_symbols_support = true,
-            smear_between_neighbor_lines = false,
-            smear_insert_mode = false,
-            never_draw_over_target = true,
-        },
-    },
+    -- {
+    --     "sphamba/smear-cursor.nvim",
+    --     lazy = false,
+    --     opts = {
+    --         smear_to_cmd = false,
+    --         legacy_computing_symbols_support = true,
+    --         smear_between_neighbor_lines = false,
+    --         smear_insert_mode = false,
+    --         never_draw_over_target = true,
+    --     },
+    -- },
 }

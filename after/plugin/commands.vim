@@ -5,7 +5,7 @@ command! PythonDictToJson :.!python -c "import sys, json; print(json.dumps(eval(
 command! ToNotebook :!jupytext --to notebook %
 command! ToPy :!jupytext --to py % :e %
 command! ToMd :!jupytext --to md %
-command! JsonStrToJson :.!python -c "import sys, json; print(json.loads(sys.stdin.read()))" | :set filetype=json
+command! JsonStrToJson :setlocal filetype=json | :.!python -c "import sys, json; print(json.loads(sys.stdin.read()))"
 command! TsvToJson :%!python -c "import sys, json, csv; print(json.dumps(list(csv.DictReader(sys.stdin, delimiter='\t'))))" | :set filetype=json
 command! Chat :sp .chat.md | :set filetype=markdown | :setlocal wrap
 command! Share :windo set norelativenumber

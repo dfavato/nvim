@@ -65,55 +65,6 @@ vim.keymap.set('n', 'K', function()
   end
 end, { silent = true })
 
--- Floating window scrolling
-vim.keymap.set('n', '<C-j>', function()
-  if vim.fn['coc#float#has_scroll']() == 1 then
-    return vim.fn['coc#float#scroll'](1)
-  else
-    return '<C-f>'
-  end
-end, { expr = true, silent = true, nowait = true })
-
-vim.keymap.set('n', '<C-k>', function()
-  if vim.fn['coc#float#has_scroll']() == 1 then
-    return vim.fn['coc#float#scroll'](0)
-  else
-    return '<C-b>'
-  end
-end, { expr = true, silent = true, nowait = true })
-
-vim.keymap.set('i', '<C-j>', function()
-  if vim.fn['coc#float#has_scroll']() == 1 then
-    return '<c-r>=coc#float#scroll(1)<cr>'
-  else
-    return '<Right>'
-  end
-end, { expr = true, silent = true, nowait = true })
-
-vim.keymap.set('i', '<C-k>', function()
-  if vim.fn['coc#float#has_scroll']() == 1 then
-    return '<c-r>=coc#float#scroll(0)<cr>'
-  else
-    return '<Left>'
-  end
-end, { expr = true, silent = true, nowait = true })
-
-vim.keymap.set('v', '<C-j>', function()
-  if vim.fn['coc#float#has_scroll']() == 1 then
-    return vim.fn['coc#float#scroll'](1)
-  else
-    return '<C-f>'
-  end
-end, { expr = true, silent = true, nowait = true })
-
-vim.keymap.set('v', '<C-k>', function()
-  if vim.fn['coc#float#has_scroll']() == 1 then
-    return vim.fn['coc#float#scroll'](0)
-  else
-    return '<C-b>'
-  end
-end, { expr = true, silent = true, nowait = true })
-
 -- Function key mappings
 vim.keymap.set('n', '<F2>', ':CocCommand document.toggleInlayHint<CR>', { silent = true, desc = 'Toggle inlay hints' })
 vim.keymap.set('n', '<F3>', function() vim.fn.CocActionAsync('showOutline') end, { silent = true, desc = 'Show outline' })
