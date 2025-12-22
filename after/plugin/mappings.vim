@@ -17,10 +17,6 @@ if $WSL_DISTRO_NAME != ''
     nnoremap  <C-]>
 endif
 
-" Managing buffers
-nnoremap <tab> :bnext<CR>
-nnoremap <s-tab> :bprevious<CR>
-
 " More convenient escape in terminal mode
 tnoremap <esc><esc> <C-\><C-n>
 

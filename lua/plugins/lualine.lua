@@ -30,8 +30,7 @@ return {
                 "encoding",
                 "fileformat",
             },
-            lualine_y = { "progress" },
             lualine_z = { "location" },
         },
-    }
+    },
 }

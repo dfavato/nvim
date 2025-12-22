@@ -11,7 +11,8 @@ return {
         config.setup({
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python",
                 "javascript", "typescript", "sql", "html", "bash", "dockerfile", "fish",
-                "htmldjango", "json", "latex", "markdown", "yaml", "vue", "svelte" },
+                "htmldjango", "json", "latex", "markdown", "yaml", "vue", "svelte",
+                "css", "norg", "scss", "tsx", "typst"},
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,

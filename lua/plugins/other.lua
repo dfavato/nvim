@@ -10,7 +10,7 @@ return {
     },
     {
         "tpope/vim-fugitive",
-        cmd = {"Git", "Gdiffsplit", "GBrowse" },
+        cmd = {"Git", "Gdiffsplit", "GBrowse", "Gwrite" },
     },
     {
         "tpope/vim-surround",  -- Change quotes and brackets
