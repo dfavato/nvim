@@ -26,6 +26,8 @@ filetype plugin indent on
 set list
 set shiftwidth=4 softtabstop=2 expandtab
 set laststatus=3
+set splitbelow
+set splitright
 
 set fileformats=unix,dos,mac
 
@@ -65,4 +67,33 @@ if executable('clip.exe') && executable('powershell.exe')
                 \   },
                 \   'cache_enabled': 0,
                 \ }
+endif
+
+" OSC 52 clipboard - works over SSH via Windows Terminal
+if !empty($SSH_TTY) || !empty($SSH_CONNECTION)
+lua << EOF
+local function osc52_copy(lines)
+  local text = table.concat(lines, "\n")
+  local b64 = vim.base64.encode(text)
+  local osc = "\027]52;c;" .. b64 .. "\027\\"
+  -- When running inside tmux, wrap with passthrough
+  if vim.env.TMUX then
+    osc = "\027Ptmux;\027" .. osc .. "\027\\"
+  end
+  io.stderr:write(osc)
 end
+
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = function(lines, _) osc52_copy(lines) end,
+    ["*"] = function(lines, _) osc52_copy(lines) end,
+  },
+  paste = {
+    ["+"] = function() return { vim.fn.getreg("0", 1, true), vim.fn.getregtype("0") } end,
+    ["*"] = function() return { vim.fn.getreg("0", 1, true), vim.fn.getregtype("0") } end,
+  },
+  cache_enabled = true,
+}
+EOF
+endif

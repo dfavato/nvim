@@ -11,3 +11,4 @@ command! Chat :sp .chat.md | :set filetype=markdown | :setlocal wrap
 command! Share :windo set norelativenumber
 command! Unshare :windo set relativenumber
 command! CopyPath :let @" = expand('%:p') . ':' . line('.')
+command! Killterms :windo if &buftype == 'terminal' | :bd! | endif

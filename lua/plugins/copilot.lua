@@ -1,3 +1,4 @@
+vim.g.copilot_npx = true
 return {
     "github/copilot.vim",
     keys = {

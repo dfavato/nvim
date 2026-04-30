@@ -13,6 +13,8 @@ vim.g.coc_global_extensions = {
   'coc-vimlsp',
   'coc-lua',
   'coc-sql',
+  '@yaegassy/coc-ty',
+  'coc-rust-analyzer',
 }
 
 -- Conqueror of completes configuration

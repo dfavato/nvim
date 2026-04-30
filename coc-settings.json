@@ -9,5 +9,8 @@
     "python.formatting.darkerArgs": ["-i"],
     "inlayHint.display": false,
     "Lua.workspace.library": ["$VIMRUNTIME/lua", "$VIMRUNTIME/lua/vim/lsp"],
-    "Lua.workspace.checkThirdParty": false
+    "Lua.workspace.checkThirdParty": false,
+    "git.urlFix": {
+      "/blob/": "/-/blob/"
+    }
 }
