@@ -1,5 +1,6 @@
 return {
-    'NickvanDyke/opencode.nvim',
+    "dfavato/opencode.nvim",
+    branch = "fix/pgrep-v0.3.0",
     dependencies = {
         { 'folke/snacks.nvim', opts = { input = {}, picker = {}, terminal = {} } },
     },
