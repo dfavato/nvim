@@ -4,23 +4,17 @@ return {
     build = ":TSUpdate",
     lazy = false,
     dependencies = {
-        "nvim-treesitter/nvim-treesitter-textobjects", -- Extra text objects
+        "nvim-treesitter/nvim-treesitter-textobjects",
     },
     init = function()
-        config = require("nvim-treesitter.configs")
+        local config = require("nvim-treesitter.configs")
         config.setup({
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python",
                 "javascript", "typescript", "sql", "html", "bash", "dockerfile", "fish",
                 "htmldjango", "json", "latex", "markdown", "yaml", "vue", "svelte",
                 "css", "norg", "scss", "tsx", "typst"},
-
-            -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
-
-            -- Automatically install missing parsers when entering buffer
-            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
             auto_install = true,
-
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = false,
@@ -31,7 +25,7 @@ return {
             textobjects = {
                 select = {
                     enable = true,
-                    lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+                    lookahead = true,
                     keymaps = {
                         ["af"] = "@function.outer",
                         ["if"] = "@function.inner",
@@ -42,5 +36,15 @@ return {
                 },
             },
         })
+    end,
+    config = function()
+        local install = require("nvim-treesitter.install")
+        local ts_cli_version = require("nvim-treesitter.utils").ts_cli_version()
+        if ts_cli_version then
+            local version = vim.split(ts_cli_version, " ")[1]
+            if version >= "0.26" or version < "0.20.2" then
+                install.ts_generate_args = { "generate" }
+            end
+        end
     end,
 }
