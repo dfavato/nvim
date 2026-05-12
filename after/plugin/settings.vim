@@ -15,6 +15,7 @@ set updatetime=40
 set foldlevelstart=3
 set foldmethod=indent
 set path+=**
+set wildignore+=**/node_modules/**,**/__pycache__/**,**/.git/**
 
 if has('termguicolors')
   set termguicolors
