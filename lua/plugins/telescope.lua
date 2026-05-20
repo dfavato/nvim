@@ -14,6 +14,7 @@ return {
             { "<leader>fp", function() require("telescope.builtin").git_files({ hidden = true }) end, desc = "Find Git Files (hidden)" },
             { "<leader>fd", function() require("telescope.builtin").find_files({ cwd = "~/" }) end, desc = "Find Files (home)" },
             { "<leader>c", function() require("telescope.builtin").find_files({ cwd = "~/.config/nvim/" }) end, desc = "Find Config" },
+            { "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers" },
             { "<leader>fs", ":Telescope live_grep<CR>", desc = "Live Grep" },
             { "<leader>ft", ":Telescope tags<CR>", desc = "Find Tags" },
             { "<leader>fr", ":Telescope oldfiles<CR>", desc = "Recent Files" },

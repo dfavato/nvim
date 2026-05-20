@@ -34,7 +34,7 @@ local function get_selected_text()
     local end_line, end_col = end_pos[2], end_pos[3]
 
     -- If first line is indented, remove the indentation from all lines
-    local indent = vim.fn.indent(start_line)
+    local indent = 0
 
     local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
 
@@ -59,6 +59,8 @@ local function send_selection_to_opencode()
 end
 
 return {
+    -- "nickjvandyke/opencode.nvim",
+    -- tag = "v0.3.0",
     "dfavato/opencode.nvim",
     branch = "fix/pgrep-v0.3.0",
     dependencies = {
@@ -77,7 +79,7 @@ return {
         }
         vim.keymap.set({ 'n', 'v', }, '<leader>op', function() require('opencode').select() end,
             { desc = 'Select prompt' })
-        vim.keymap.set('n', '<leader>oA', function() require('opencode').ask('', { submit = true }) end,
+        vim.keymap.set('n', '<leader>oA', function() require('opencode').ask('', { submit = false }) end,
             { desc = 'Ask opencode' })
         vim.keymap.set({ 'n', 'v', }, '<leader>oa', function() require('opencode').prompt('\n@this\n') end,
             { desc = 'Add this to prompt' })

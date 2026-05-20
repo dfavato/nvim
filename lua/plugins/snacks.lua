@@ -10,5 +10,10 @@ return {
         image = {
             force = true,
         },
-    }
+        lazygit = {
+        },
+    },
+    keys = {
+        { "\\", function() require("snacks").lazygit() end, desc = "Lazygit" },
+    },
 }
